@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+  <header>
+    <h1>Cosas increíbles que puedo hacer con JavaScript</h1>
+  </header>
+  <section class="botonera">
+    <button type="button" class="btn btn-warning" onclick="window.location.reload()">Inicio</button>
+    <button type="button" class="btn btn-info"
+      onclick="document.getElementById('parrafo').innerHTML = 'robloxxxxxxxxxxxxxx</p>'">Cambiar contenido</button>
+    <button type="button" class="btn btn-secondary"
+      onclick="document.querySelector('.foto').src='img/9ebe200f0be2ed371d442cd600e7394d.jpg'">FlowerBunny</button>
+    <button type="button" class="btn btn-secondary"
+      onclick="document.querySelector('.foto').src='img/bunny.jpg'">CutieBunny</button>
+
+    <button type="button" class="btn btn-danger"
+      onclick="document.querySelector('header').style.background= 'palevioletred'">Cambiar estilo</button>
+    <!-- <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.display='none'">Ocultar</button>
+    <button type="button" class="btn btn-light" onclick="document.querySelector('.otraseccion').style.display='block'">Mostrar</button> -->
+
+    <button type="button" class="btn btn-dark"
+      onclick="document.querySelector('.otraseccion').style.visibility='hidden'">Ocultar</button>
+    <button type="button" class="btn btn-light"
+      onclick="document.querySelector('.otraseccion').style.visibility='visible'">Mostrar</button>
+  </section>
+  <section class="texto">
+    <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, architecto autem molestias magni
+      dolores asperiores,
+      provident porro, possimus doloribus alias repellat distinctio placeat corrupti. Porro fuga, quia laudantium error
+      et
+      aperiam eius cumque aspernatur reprehenderit vero, voluptatem, ex ducimus molestiae iste officiis a adipisci ad
+      optio architecto! Assumenda eligendi deserunt aliquam quos quaerat dicta totam, dolore hic. Nobis minus et
+      molestiae
+      consequuntur totam voluptates eius hic consectetur nam ut veritatis recusandae quidem, sit facere velit neque
+      voluptas accusamus, unde quod deserunt, similique vero debitis. Repellendus ipsam, ab magni corrupti doloribus
+      aliquid minus amet ea quod molestiae quisquam tenetur aspernatur deserunt beatae modi tempore officia distinctio
+      quae esse laudantium incidunt vel qui in! Blanditiis perspiciatis non a voluptatum itaque cum! Tenetur, ipsa eos?
+      Cum ratione dolor, id atque dicta magnam maxime inventore sed magni quis? Iste maxime culpa esse suscipit facilis.
+      Sed iste totam, reprehenderit id exercitationem nemo! Porro consectetur similique possimus nostrum obcaecati
+      doloremque blanditiis modi reiciendis quibusdam officiis, expedita nobis, numquam dolorum eos pariatur, nulla
+      dolorem voluptatibus atque voluptas. Deserunt laudantium quis voluptatem veritatis voluptas distinctio sint beatae
+      repellat tempora blanditiis fugiat quo, sed praesentium aspernatur minus esse? Similique dolore rem velit
+      provident
+      deserunt, dicta quisquam reiciendis incidunt libero modi voluptatem at, itaque nemo voluptas officia nihil
+      praesentium beatae neque fugit dolorum odio pariatur. Saepe sapiente harum, a ex eaque iure cum tempora
+      exercitationem illum soluta eligendi quis officia odio consequuntur maiores nostrum illo. Quaerat, numquam. Eos
+      earum ipsam officia quasi delectus exercitationem enim minus odio reprehenderit architecto beatae iste doloribus
+      tenetur commodi cupiditate molestiae cum aliquam aliquid velit ratione deleniti nostrum, hic voluptas. Adipisci
+      ratione, sunt sint quaerat eaque facilis inventore numquam harum? Architecto doloribus possimus nesciunt quos
+      alias
+      id nobis, rerum voluptas velit. Consequuntur voluptatum similique nemo tempora, dignissimos id, tenetur tempore
+      iure
+      fugiat, recusandae laudantium voluptates!</p>
+    <div>
+      <img class="foto" src="img/9ebe200f0be2ed371d442cd600e7394d.jpg" alt="Bunny">
+    </div>
+  </section>
+  <div class="otraseccion">
+    <h2>Hola soy nueva solo eso bye</h2>
+  </div>
+  <footer>
+    <i class="fa-solid fa-carrot fa-jello"></i>
+  </footer>
+  <script src="js/script.js"></script>
+  <script src="https://kit.fontawesome.com/daa881431a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

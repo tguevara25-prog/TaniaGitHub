@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+*{
+  font-family: "Metamorphous", serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header{
+  padding: 1.5rem;
+  background-color: rgb(232, 227, 182);
+}
+
+h1{
+  margin: 40px;
+  color: rgb(93, 55, 29);
+  text-align: center;
+}
+
+.botonera{
+  display: flex;
+  margin: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.texto{
+  display: flex;
+}
+
+.texto .imagen{
+  width: 40%;
+}
+
+.otraseccion{
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+footer{
+  height: 150px;
+  background-color: palevioletred;
+}
