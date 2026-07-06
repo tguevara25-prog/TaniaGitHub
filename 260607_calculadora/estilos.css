@@ -1,0 +1,111 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Unica One", sans-serif;
+}
+
+body{
+  margin: 0;
+  background-image: url(img/fondo.jpg);
+  background-size: cover;
+}
+
+.calculadora{
+  width: 360px;
+  min-height: 600px; 
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7b884;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+h1{
+  text-align: center;
+  font-size: 40px;
+  color: #e9834c;
+  margin-bottom: 20px;
+}
+
+.zona-nombre{
+  margin-bottom: .5em;
+}
+
+#nombre{
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  margin-bottom: .5em;
+  border: 1px solid rgb(36, 72, 110);
+  border-radius: 1em;
+}
+
+button{
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  background-color: #e9834c;
+  color: white;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover{
+  background-color: #7e85cb;
+}
+
+#saludo{
+  display: none;
+  font-size: 1.2em;
+  color: #4c95e9;
+  margin-top: .5em;
+}
+
+.teclado{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.boton-igual {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  background-color: #e9834c;
+}
+ 
+.boton-igual:hover{
+  background-color: #7e85cb;
+}
+
+#pantalla{
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid rgb(36, 72, 110);
+  border-radius: 1em;
+}
+
+#comentario{
+  margin-top: 10px;
+  color: #4c95e9;
+}
+
+.extras{
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.extras button{
+  flex: 1;
+  font-size: 1.2em;
+}
+
+.fiesta{
+  background-image: url(img/fondo2.jpg);
+  background-size: 1500px;
+}
