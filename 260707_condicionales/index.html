@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Condicionales</title>
+
+</head>
+
+<body>
+  <main>
+    <div class="disco">
+      <h2>Disco</h2>
+      <input type="text" id="edad" placeholder="Introduce tu edad">
+      <button onclick="verificarEdad()">Verificar</button>
+      <p id="resultado"></p>
+    </div>
+
+    <div class="concierto">
+      <h2>Concierto</h2>
+      <label for="entradaConcierto">¿Tienes entrada?</label>
+      <input type="radio" id="entradaConcierto" name="entrada" value="si">
+      <label for="entradaConciertoSi">Sí</label>
+      <input type="radio" id="entradaConcierto" name="entrada" value="no">
+      <label for="entradaConciertoNo">No</label>
+
+      <label for="edadConcierto">¿Qué edad tienes?</label>
+      <input type="text" id="edadConcierto" placeholder="Introduce tu edad">
+      <button onclick="verificarConcierto()">Verificar</button>
+      <p id="resultadoConcierto"></p>
+    </div>
+
+    <div class="idioma">
+      <h2>Hola en diferentes idiomas</h2>
+      <button onclick="cambiarIdioma('es')">Español</button>
+      <button onclick="cambiarIdioma('en')">Inglés</button>
+      <button onclick="cambiarIdioma('fr')">Francés</button>
+      <button onclick="cambiarIdioma('de')">Alemán</button>
+      <p id="saludo"></p>
+    </div>
+    
+    <div class="precio-entradas">
+      <h2>Precio entradas</h2>
+      <label for="edadEntradas">¿Qué edad tienes?</label>
+      <input type="text" id="edadEntradas" placeholder="Introduce tu edad">
+      <label for="numEntradas">¿Cuántas entradas quieres</label>
+      <input type="text" id="numEntradas" placeholder="Introduce la cantidad de entradas">
+      <button onclick="calcularPrecio()">Verificar</button>
+      <p id="precio"></p>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

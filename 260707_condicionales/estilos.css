@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50vh 50vh;
+  height: 100vh;
+}
+
+.disco,
+.precio-entradas {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  margin: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #7c94d2;
+}
+
+.idioma button {
+  display: inline-block;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.idioma {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  gap: 10px;
+  align-content: center;
+}
+
+.idioma h2,
+.idioma p {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.concierto {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+}
+.concierto h2,
+.concierto label[for="entradaConcierto"],
+.concierto label[for="edadConcierto"],
+.concierto input[type="text"],
+.concierto button,
+.concierto p {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
