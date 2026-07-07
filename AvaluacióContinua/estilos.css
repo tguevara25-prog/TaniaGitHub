@@ -1,0 +1,39 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Metamorphous", serif;
+}
+
+:root{
+  --storm-blue: #3F5F7A;
+  --sky-blue: #6F889B;
+  --stone: #7A726A;
+  --dark-stone: #3E4348;
+  --sand: #D9C7A8;
+  --mist: #F2F3F1;
+  --gold: #C9A35A;
+  --leather: #6A4E3A;
+}
+
+header h1{
+  text-align: center;
+  font-size: 80px;
+  color: #C9A35A;
+  text-shadow: 2px 2px 5px black;
+}
+
+header p{
+  color: #FDFCF7;
+  text-shadow: 2px 2px 6px rgba(0,0,0,.9);
+  font-size: 2rem;
+}
+
+header{
+  height: 100vh;
+  background-image: url(img/fondo.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
