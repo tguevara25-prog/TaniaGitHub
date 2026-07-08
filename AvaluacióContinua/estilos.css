@@ -15,6 +15,35 @@
   --leather: #6A4E3A;
 }
 
+.menu {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.menu ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 5px black;
+}
+
 header h1{
   text-align: center;
   font-size: 80px;
@@ -40,6 +69,12 @@ header{
 
 .carrousel {
   width: 50%;
-  margin: 120px 120px;
+  margin: 100px 100px;
   display: flex;
 }
+
+.carrousel p, .carrousel h5{
+  color: #F2F3F1;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
