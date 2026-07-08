@@ -41,4 +41,5 @@ header{
 .carrousel {
   width: 50%;
   margin: 120px 120px;
+  display: flex;
 }
