@@ -37,3 +37,8 @@ header{
   justify-content: center;
   align-items: center;
 }
+
+.carrousel {
+  width: 50%;
+  margin: 120px 120px;
+}
