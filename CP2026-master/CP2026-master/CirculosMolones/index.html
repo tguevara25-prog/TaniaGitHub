@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/circle-regular-full.svg" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Círculos Molones</title>
+</head>
+
+<body>
+
+    <header class="cabecera">
+        <nav class="menu">
+            <p class="logo">Círculos Molones</p>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Círculos</a></li>
+                <li><a href="#startup">Startup</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="hero-texto">
+                <p class="etiqueta">Startup circular desde 2026</p>
+
+                <h1>Círculos Molones</h1>
+
+                <h2>Vendemos círculos. Pero no cualquier círculo.</h2>
+
+                <p>
+                    En Círculos Molones diseñamos círculos con personalidad:
+                    círculos decorativos, círculos motivacionales, círculos para mirar,
+                    círculos para regalar y círculos que simplemente existen con estilo.
+                </p>
+
+                <button onclick="cambiarCirculo()">Sorpréndeme con un círculo</button>
+
+                <p id="mensaje-circulo" class="mensaje">
+                    Tu círculo ideal está a un clic de distancia.
+                </p>
+            </div>
+
+            <div class="hero-circulos">
+                <div class="circulo grande"></div>
+                <div class="circulo mediano"></div>
+                <div class="circulo pequeno"></div>
+            </div>
+        </section>
+
+        <section id="productos" class="productos">
+            <h2>Nuestros círculos estrella</h2>
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+                    <div class="icono circulo-rosa"></div>
+                    <h3>Círculo Fucsia</h3>
+                    <p>
+                        Ideal para personas que quieren decorar su vida con energía,
+                        drama visual y cero líneas rectas.
+                    </p>
+                    <p class="precio">9,99 €</p>
+                </article>
+
+                <article class="tarjeta destacada">
+                    <div class="icono circulo-lima"></div>
+                    <h3>Círculo Premium</h3>
+                    <p>
+                        Nuestro círculo más vendido. Redondo, intenso, equilibrado
+                        y con actitud de startup unicornio.
+                    </p>
+                    <p class="precio">19,99 €</p>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono circulo-azul"></div>
+                    <h3>Círculo Zen</h3>
+                    <p>
+                        Para quienes necesitan calma, armonía y una forma geométrica
+                        que no les lleve la contraria.
+                    </p>
+                    <p class="precio">14,99 €</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ESTA SECCIÓN DE CALCULADORA VA PARA EL ENCARGO DE DATOS Y OPERADORES -01, Y MODIFICADA PARA CUMPLIR TAMBIÉN CON CONDICIONALES-02 -->
+        <section class="calculadora-compra">
+            <div class="contenido-calculadora">
+                <p class="etiqueta">Calculadora circular</p>
+
+                <h2>Calcula tu pedido de círculos</h2>
+
+                <p>
+                    Elige cuántos círculos molones quieres comprar.
+                    Si compras 5 o más, activamos automáticamente el descuento de colección circular.
+                </p>
+
+                <div class="formulario-compra">
+                    <label for="producto">Elige tu círculo:</label>
+
+                    <select id="producto">
+                        <option value="fucsia">Círculo Fucsia - 9,99 €</option>
+                        <option value="zen">Círculo Zen - 14,99 €</option>
+                        <option value="premium">Círculo Premium - 19,99 €</option>
+                    </select>
+
+                    <label for="cantidad">Número de círculos:</label>
+                    <input type="number" id="cantidad" min="1" value="1">
+
+                    <button id="boton-calcular">Calcular pedido</button>
+                </div>
+
+                <div id="resultado-pedido" class="resultado-pedido">
+                    Aquí aparecerá el precio final de tu pedido.
+                </div>
+
+                <div id="lista-circulos" class="lista-circulos">
+                    Aquí aparecerán los círculos preparados para tu pedido.
+                </div>
+            </div>
+        </section>
+
+        <section id="startup" class="startup">
+            <div>
+                <p class="etiqueta">Qué hacemos</p>
+                <h2>Una startup absurda, pero redonda</h2>
+                <p>
+                    Nuestro producto principal son círculos físicos y digitales
+                    diseñados a medida. Cada círculo puede tener color, tamaño,
+                    intención, nivel de molonidad y certificado de redondez.
+                </p>
+            </div>
+
+            <div class="datos">
+                <article>
+                    <strong>100%</strong>
+                    <span>redondos</span>
+                </article>
+
+                <article>
+                    <strong>0</strong>
+                    <span>esquinas</span>
+                </article>
+
+                <article>
+                    <strong>∞</strong>
+                    <span>posibilidades</span>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Círculos Molones © 2026 — La geometría nunca fue tan innecesaria.</p>
+    </footer>
+
+    <script src="circulos.js"></script>
+
+</html>

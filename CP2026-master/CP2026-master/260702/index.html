@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+
+    <title>JS</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Cosas increíbles que puedo hacer con JavaScript</h1>
+    </header>
+
+    <section class="botonera">
+        <button type="button" class="btn btn-warning" onclick="window.location.reload()">Inicio</button>
+        <button type="button" class="btn btn-info"
+            onclick="document.getElementById('parrafo').innerHTML = 'flipa y reflipa'">Cambiar contenido</button>
+        <button type="button" class="btn btn-secondary"
+            onclick="document.querySelector('.foto').src='img/dog.jpg'">Perro</button>
+        <button type="button" class="btn btn-secondary"
+            onclick="document.querySelector('.foto').src='img/cat.jpg'">Gato</button>
+
+        <button type="button" class="btn btn-light" onclick="document.querySelector('header').style.background= 'pink'">Cambiar estilo</button>
+        <!-- <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.display='none'">Ocultar</button>
+        <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.display='block'"> Mostrar</button> -->
+
+         <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.visibility='hidden'">Ocultar</button>
+        <button type="button" class="btn btn-dark" onclick="document.querySelector('.otraseccion').style.visibility='visible'"> Mostrar</button>
+
+<i class="fa-solid fa-robot fa-bounce fa-2xl" style="color: rgb(116, 192, 252);"></i>
+
+    </section>
+    <section class="texto">
+
+        <p id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ea, modi ad magni est
+            corporis reiciendis quae magnam, sed et fuga voluptatem tempora veniam ipsum at? Cupiditate, adipisci?
+            Ex
+            delectus culpa aliquam sunt tenetur, eos cupiditate ullam dolorum reiciendis accusamus facilis
+            consequatur
+            aliquid pariatur sapiente aspernatur alias et nemo quos nulla minima molestias vitae. Recusandae
+            deleniti
+            itaque esse ad, nesciunt inventore sapiente earum nulla facere possimus magni commodi quo consequuntur.
+            Voluptatem, doloribus accusantium iste eveniet sunt facere. Hic harum similique quasi, voluptate maxime
+            ab
+            beatae odio! Mollitia minima odio repellat commodi consectetur ipsum ullam iusto dolore eum earum? Nulla
+            fugit, modi doloremque dolore rerum culpa similique. Perferendis voluptatem doloremque quasi totam
+            consequatur voluptas officiis, corrupti in praesentium architecto! Amet reprehenderit, distinctio
+            similique,
+            vel maiores necessitatibus a voluptate dolorum est mollitia quos magnam ex et incidunt tenetur
+            laboriosam
+            ducimus iste quisquam deleniti minima suscipit reiciendis! Aperiam, ullam in? Libero sapiente rem
+            inventore
+            tempora voluptas! Ut necessitatibus doloribus quis dolorum placeat saepe aliquam est voluptatum fugiat
+            earum
+            quo totam tempore nihil molestias laboriosam, quos dolore veniam? Quod quidem sed velit, pariatur ipsam
+            ab
+            natus esse nam quis veniam quo laborum mollitia tenetur minima impedit iusto quam doloremque iure aut
+            illo
+            nostrum at! Tenetur perspiciatis inventore voluptatem quisquam. Rem voluptatem cum dignissimos nisi
+            distinctio natus nihil placeat consectetur. Repellat provident repellendus assumenda atque labore,
+            voluptas
+            iure libero dignissimos minima doloribus placeat iste distinctio. Ipsum doloribus quia a. Suscipit
+            assumenda
+            nihil voluptates veniam! Error quisquam consequuntur hic nam tempora soluta perferendis, odit mollitia
+            magni. Ducimus porro quaerat eaque maxime, excepturi corrupti, ut exercitationem accusantium non aut,
+            facilis minima quibusdam dicta itaque corporis pariatur temporibus harum sequi aperiam. Nihil tenetur
+            saepe
+            aliquid et repellendus quos amet officiis eum? Quia enim incidunt, ullam animi quisquam, dolorum minus
+            sit
+            esse placeat architecto ducimus quaerat quis inventore fugit.</p>
+
+        <div>
+            <img class="foto" src="img/dog.jpg" alt="">
+        </div>
+    </section>
+
+    <div class="otraseccion">
+        <h2>esto se acaba</h2>
+    </div>
+
+    <footer>
+
+    </footer>
+<script src="scripts.js"></script>
+<script src="https://kit.fontawesome.com/0bc510ca7a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
