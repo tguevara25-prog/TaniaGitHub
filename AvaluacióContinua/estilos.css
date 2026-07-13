@@ -75,15 +75,45 @@ header {
 }
 
 .carrousel {
-  width: 50%;
-  margin: 100px 100px;
+  width: 90%;
+  margin: 100px auto;
   display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
-.carrousel p,
-.carrousel h5 {
-  color: #f2f3f1;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+.carousel-caption p, .carousel-caption h5{
+  text-shadow: 2px 2px 2px black;
+}
+
+.carrousel .carousel {
+  width: 60%;
+  flex-shrink: 0;
+}
+
+.texto {
+  width: 40%;
+}
+
+.texto h2 {
+  color: var(--gold);
+  font-size: 50px;
+  text-align: left;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px black;
+}
+
+.texto p {
+  color: var(--dark-stone);
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+#producto {
+  margin: 100px auto;
+  font-size: 60px;
+  color: #c9a35a;
+  text-shadow: 2px 2px 2px black;
 }
 
 .productos {
@@ -148,9 +178,6 @@ header {
 }
 
 h2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
