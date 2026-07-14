@@ -82,7 +82,8 @@ header {
   gap: 50px;
 }
 
-.carousel-caption p, .carousel-caption h5{
+.carousel-caption p,
+.carousel-caption h5 {
   text-shadow: 2px 2px 2px black;
 }
 
@@ -175,6 +176,21 @@ header {
 
 .card button:hover {
   background: var(--storm-blue);
+}
+
+.card label {
+  display: block;
+  margin: 0 15px 5px;
+  color: var(--dark-stone);
+  font-size: 0.9rem;
+}
+
+.card input {
+  width: calc(100% - 30px);
+  margin: 0 15px 15px;
+  padding: 8px;
+  border: 1px solid var(--stone);
+  border-radius: 8px;
 }
 
 h2 {
