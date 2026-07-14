@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f1ea;
+  color: #333;
+}
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+#acceso,
+#pasaporte {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+#acceso h1 {
+  color: #8b0000;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#acceso p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#acceso label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#acceso input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+#acceso input:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+#acceso button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #8b0000;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#acceso button:hover {
+  background: #b22222;
+}
+
+#listaBares button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b0000, #c0392b);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(139, 0, 0, 0.3);
+}
+
+#listaBares button:hover {
+  background: linear-gradient(135deg, #a00000, #e74c3c);
+  transform: translateY(-2px);
+}
+
+#listaBares button:active {
+  transform: scale(0.97);
+}
+
+#mensajeAcceso {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #8b0000;
+}
+
+#pasaporte {
+  margin-top: 30px;
+  /* display: none; Elimínalo si quieres verlo siempre */
+}
+
+#pasaporte header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#saludo {
+  color: #8b0000;
+  margin-bottom: 10px;
+}
+
+#progreso,
+#estadoPasaporte {
+  margin: 8px 0;
+}
+
+.barra {
+  width: 100%;
+  height: 18px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.barraProgreso {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #8b0000, #e67e22);
+  transition: width 0.4s;
+}
+
+#listaBares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+#listaBares > * {
+  background: #fafafa;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+#listaBares > *:hover {
+  border-color: #8b0000;
+  transform: translateY(-3px);
+}
+
+#mensajeSello {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: green;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 15px;
+  }
+
+  #acceso,
+  #pasaporte {
+    padding: 20px;
+  }
+
+  #acceso h1 {
+    font-size: 28px;
+  }
+}
