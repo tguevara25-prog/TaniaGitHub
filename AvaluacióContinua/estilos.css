@@ -241,3 +241,51 @@ footer {
   font-size: 0.9rem;
   color: var(--mist);
 }
+
+.carrito {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
+}
+
+.carrito-panel {
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f2f3f1;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carrito-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.carrito-panel li {
+  margin: 10px 0;
+}
+
+#vaciarCarrito,
+#comprarCarrito {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--storm-blue);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#vaciarCarrito:hover,
+#comprarCarrito:hover {
+  background: var(--gold);
+}
+
+.carrito-panel h2 {
+  color: var(--gold);
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px black;
+}

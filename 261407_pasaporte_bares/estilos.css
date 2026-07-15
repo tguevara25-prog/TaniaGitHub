@@ -95,6 +95,11 @@ main {
   transform: scale(0.97);
 }
 
+#listaBares button:disabled{
+  background: #6b6262;
+  cursor: not-allowed;
+}
+
 #mensajeAcceso {
   margin-top: 15px;
   text-align: center;
