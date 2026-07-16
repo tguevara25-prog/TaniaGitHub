@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #eef4ff, #d9e7ff);
+  color: #333;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.miniTitulo {
+  color: #6366f1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+header p:last-child {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+#listaPlanes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.tarjeta {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contenedorImagen {
+  position: relative;
+}
+
+.contenedorImagen img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.icono {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contenidoTarjeta {
+  padding: 20px;
+}
+
+.categoria {
+  color: #6366f1;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.contenidoTarjeta h2 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.contenidoTarjeta p {
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.reservado {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+.disponible {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  #listaPlanes {
+    grid-template-columns: 1fr;
+  }
+}
