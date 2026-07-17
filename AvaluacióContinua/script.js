@@ -147,6 +147,8 @@ function calcularProductos(cantidad, precio, mensaje, nombre){
     `Se añadieron ${numero} unidad(es) de ${nombre}.`);
     carrito[nombre] = subtotal;
     total = 0; 
+    
+    //BUCLE
     for (let producto in carrito) {
         total += carrito[producto];
     }
