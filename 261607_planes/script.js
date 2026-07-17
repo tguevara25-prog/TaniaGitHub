@@ -40,31 +40,73 @@ let planes =  [
 
 const listaPlanes = document.getElementById('listaPlanes')
 
-for(let plan of planes){
-  let mensajeEstado
-  let claseEstado
-  if(plan.reservado === true){
-    mensajeEstado = 'Ya está reservado'
-    claseEstado = 'reservado'
-  } else {
-    mensajeEstado = 'Plan disponible'
-    claseEstado = 'disponible'
+function mostrarPlanes(){
+  listaPlanes.innerHTML = ''
+  for(let i = 0; i < planes.length; i++){
+  // for(let plan of planes){
+    let plan = planes[i]
+    let mensajeEstado
+    let claseEstado
+  
+    if(plan.reservado === true){
+      mensajeEstado = 'Ya está reservado'
+      claseEstado = 'reservado'
+    } else {
+      mensajeEstado = 'Plan disponible'
+      claseEstado = 'disponible'
+    }
+
+    //poner 'gratis' cuando el precio es cero
+    let textoPrecio
+    if(plan.precio === 0){
+      textoPrecio = 'Gratis'
+    } else {
+      textoPrecio = `${plan.precio} €`
+    }
+
+    listaPlanes.innerHTML += `
+    <article class='tarjeta'>
+    <div class='contenedorImagen'>
+    <img src=${plan.imagen} alt='${plan.nombre}'>
+    
+    <span class='icono'>${plan.icono}</span>
+    </div>
+    <div class='contenidoTarjeta'>
+    <p class='categoria'>${plan.categoria}</p>
+    <h2>${plan.nombre} ${plan.icono}</h2>
+    <p>Lugar: ${plan.lugar}</p>
+    <p>Precio: ${textoPrecio}</p>
+    <p class='estado ${claseEstado}'>${mensajeEstado}</p>
+    <button class='btnReservar' data-indice='${i}'>Cambiar reserva</button>
+    </div>
+    </article>
+    `
   }
 
-  listaPlanes.innerHTML += `
-  <article class='tarjeta'>
-  <div class='contenedorImagen'>
-  <img src=${plan.imagen} alt='${plan.nombre}'>
+  let botonesReservar = document.querySelectorAll('.btnReservar')
   
-  <span class='icono'>${plan.icono}</span>
-  </div>
-  <div class='contenidoTarjeta'>
-  <p class='categoria'>${plan.categoria}</p>
-  <h2>${plan.nombre} ${plan.icono}</h2>
-  <p>Lugar: ${plan.lugar}</p>
-  <p>Precio: ${plan.precio}</p>
-  <p>${mensajeEstado}</p>
-  </div>
-  </article>
-  `
+  for(let boton of botonesReservar){
+    boton.addEventListener('click', cambiarReserva)
+    }
+  }
+
+function cambiarReserva(ev) {
+  let indice = ev.target.dataset.indice
+  // console.log(indice)
+  planes[indice].reservado = !planes[indice].reservado
+
+  mostrarPlanes()
 }
+
+planes.push({
+    nombre: 'Beer Pong',
+    lugar: 'Playa',
+    precio: 'Lo que te valga la cerveza',
+    categoria: 'Deporte',
+    icono: '🍺',
+    imagen: 'img/beer-pong.jpg',
+    reservado: false
+  }
+)
+
+mostrarPlanes()

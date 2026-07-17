@@ -104,6 +104,7 @@ main {
 .contenidoTarjeta h2 {
   color: #1e3a8a;
   margin-bottom: 15px;
+  font-size: 20px;
 }
 
 .contenidoTarjeta p {
@@ -119,6 +120,21 @@ main {
 .disponible {
   color: #16a34a;
   font-weight: bold;
+}
+
+.btnReservar {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px 0 0 0; 
+}
+
+.btnReservar:hover {
+  background: #2563eb;
 }
 
 @media (max-width: 700px) {

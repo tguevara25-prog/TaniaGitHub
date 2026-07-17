@@ -15,12 +15,6 @@
   --leather: #6a4e3a;
 }
 
-body {
-  /* background-image: url("img/papel.png"); */
-  background-repeat: repeat;
-  background-size: cover;
-}
-
 .menu {
   position: absolute;
   width: 100%;
@@ -44,7 +38,7 @@ body {
 }
 
 .menu a {
-  color: white;
+  color: #fdfcf7;
   text-decoration: none;
   font-size: 1.2rem;
   text-shadow: 2px 2px 5px black;
@@ -85,6 +79,7 @@ header {
 .carousel-caption p,
 .carousel-caption h5 {
   text-shadow: 2px 2px 2px black;
+  color: #fdfcf7;
 }
 
 .carrousel .carousel {
@@ -288,4 +283,82 @@ footer {
   font-size: 40px;
   margin-bottom: 20px;
   text-shadow: 2px 2px 2px black;
+}
+
+#mensajeLinterna,
+#mensajeRoshar,
+#mensajeMoldeador,
+#mensajeLlanuras,
+#mensajeKholinar,
+#mensajeEspada,
+#mensajeDibujos,
+#mensajeArmadura {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .menu {
+    padding: 15px 25px;
+  }
+  .menu a {
+    font-size: 20px;
+  }
+  header h1 {
+    font-size: 55px;
+  }
+  header p {
+    font-size: 1.5rem;
+  }
+  .carrousel {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .carrousel .carousel,
+  .texto {
+    width: 100%;
+  }
+  .texto {
+    text-align: center;
+  }
+  .texto h2 {
+    text-align: center;
+    font-size: 40px;
+  }
+  #producto {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: static;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    background: var(--storm-blue);
+  }
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-left: 0;
+  }
+  .menu a {
+    font-size: 18px;
+  }
+  .logo {
+    width: 80px;
+  }
+  header {
+    height: 70vh;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 38px;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
 }

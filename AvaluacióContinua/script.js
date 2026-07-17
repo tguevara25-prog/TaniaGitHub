@@ -37,14 +37,7 @@ const btnVaciar = document.getElementById("vaciarCarrito");
 const botonComprar = document.getElementById("comprarCarrito");
 
 let total = 0;
-let totalArmadura = 0;
-let totalEspada = 0;
-let totalMoldeador = 0;
-let totalRoshar = 0;
-let totalLlanuras = 0;
-let totalKholinar = 0;
-let totalDibujos = 0;
-let totalLinterna = 0;
+let carrito = {};
 
 //BOTONES
 btnLinterna.addEventListener('click', () => {
@@ -110,7 +103,6 @@ function crearToast(titulo, mensaje) {
 }
 
 //COMPRAR CARRITO
-
 function comprarCarrito() {
     if (listaCarrito.children.length === 0) {
         crearToast('🛒 Carrito', 'El carrito está vacío.');
@@ -119,6 +111,7 @@ function comprarCarrito() {
     crearToast('⚔️ Compra realizada', `Tu total es de: ${total} esferas`);
 
     listaCarrito.innerHTML = '';
+    carrito = {};
     total = 0;
     totalProductos.textContent = "0";
 }
@@ -126,51 +119,40 @@ function comprarCarrito() {
 //VACIAR CARRITO
 function vaciarCarrito(){
     listaCarrito.innerHTML = ''
+    carrito = {};
     total = 0
     totalProductos.innerHTML = '0'
     crearToast('🛒 Carrito', 'El carrito se ha vaciado.');
 }
 
 //CALCULAR PRECIO
-
 function calcularProductos(cantidad, precio, mensaje, nombre){
     let numero = Number(cantidad.value);
     mensaje.innerHTML = ''
 
     if (numero <= 0){
-        mensaje.innerHTML = 'Cantidad no válida'
+        crearToast(
+        'Cantidad no válida',
+        `Escoge una cantidad del 1 al 10`);
         return
     } else if (numero > 10){
-        mensaje.innerHTML = 'Límite de 10 unidades por persona'
+        crearToast(
+        'Límite alcanzado',
+        `Escoge una cantidad del 1 al 10`);
         return
     }
     let subtotal = numero * precio;
     crearToast(
     '🏹 Producto añadido',
     `Se añadieron ${numero} unidad(es) de ${nombre}.`);
-    if (nombre === 'Linterna de esferas') {
-    totalLinterna = subtotal;
-    } else if (nombre === 'Sketchbook de Shallan') {
-    totalDibujos = subtotal;
-    } else if (nombre === 'Mapa de Kholinar') {
-    totalKholinar = subtotal;
-    } else if (nombre === 'Mapa: Llanuras Quebradas') {
-    totalLlanuras = subtotal;
-    } else if (nombre === 'Mapa de Roshar') {
-    totalRoshar = subtotal;
-    } else if (nombre === 'Moldeador de almas') {
-    totalMoldeador = subtotal;
-    } else if (nombre === "Espada Esquirlada") {
-    totalEspada = subtotal;
-    } else if (nombre === "Armadura Esquirlada") {
-    totalArmadura = subtotal;
+    carrito[nombre] = subtotal;
+    total = 0; 
+    for (let producto in carrito) {
+        total += carrito[producto];
     }
-    total = totalLinterna + totalDibujos + totalKholinar + totalLlanuras +
-            totalRoshar + totalMoldeador + totalEspada + totalArmadura;
     totalProductos.innerHTML = total + ' esferas';
-
     const productoExistente = listaCarrito.querySelector(`[data-producto='${nombre}']`);
-
+    
     if (productoExistente) {
         productoExistente.innerHTML = `${nombre} ${subtotal} esferas`;
     } else {
