@@ -1,0 +1,24 @@
+body.modoNocturno{
+  background-color: rgb(36, 36, 36);
+  color: ghostwhite;
+}
+
+main{
+  width: min(70em, 100%);
+  margin: 2em auto;
+}
+
+.panel{
+  border: 0.15em solid gray;
+}
+
+.datos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.dato{
+  flex: 1 1 12em;
+  border: 1px solid gray;
+}

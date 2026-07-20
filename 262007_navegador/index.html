@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Browser control</title>
+</head>
+
+<body>
+
+  <!-- Bloque 1 -->
+  <header class="cabecera">
+    <p class="etiqueta">Sistema iniciado</p>
+    <h1>Cosicas del navegador</h1>
+    <p id="saludo">Hola, visitante</p>
+    <button id="btnNombre">Identificarme</button>
+  </header>
+
+  <!-- Bloque 2 -->
+  <main>
+    <section class="panel">
+      <div class="tituloSeccion">
+        <div>
+          <p class="etiqueta">Diagnóstico</p>
+          <h2>Ventana del navegador</h2>
+        </div>
+      </div>
+      <div class="datos">
+        <article class="dato">
+          <h3>Tamaño visible</h3>
+          <p id="tamañoVentana"> --- </p>
+        </article>
+        <article class="dato">
+          <h3>Idioma</h3>
+          <p id="idiomaNavegador"> --- </p>
+        </article>
+        <article class="dato">
+          <h3>Conexión</h3>
+          <p id="estadoConexion"> --- </p>
+        </article>
+        <article class="dato">
+          <h3>Página actual</h3>
+          <p id="paginaActual"> --- </p>
+        </article>
+      </div>
+      <div class="acciones">
+        <button id="btnTitulo">Cambiar título</button>
+        <button id="btnModo">Modo Oscuro</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
