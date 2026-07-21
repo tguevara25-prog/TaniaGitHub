@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <title>Browser control</title>
 </head>
 
@@ -50,7 +51,23 @@
         <button id="btnModo">Modo Oscuro</button>
       </div>
     </section>
+    <section class="panel">
+      <div class="tituloSeccion">
+        <div>
+          <p class="etiqueta">DOM dinámico</p>
+          <h2>Centro de mensaje</h2>
+        </div>
+        <span id="contadorMensajes">0 mensaje</span>
+      </div>
+      <div class="formularioMensajes">
+        <input type="text" id="campoMensaje" placeholder="Tu mensaje aquí">
+        <button id="btnAñadir">Añadir mensaje</button>
+      </div>
+      <div class="listaMensajes"></div>
+    </section>
   </main>
+
+  <div id="notificaciones">Acción completada</div>
 
   <script src="script.js"></script>
 </body>

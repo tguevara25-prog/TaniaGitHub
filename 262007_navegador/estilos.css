@@ -1,24 +1,256 @@
-body.modoNocturno{
+body.modoNocturno {
   background-color: rgb(36, 36, 36);
   color: ghostwhite;
 }
 
-main{
+main {
   width: min(70em, 100%);
   margin: 2em auto;
 }
 
-.panel{
+.panel {
   border: 0.15em solid gray;
 }
 
-.datos{
+.panel + .panel {
+  margin-top: 2rem;
+}
+
+.datos {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
 }
 
-.dato{
+.dato {
   flex: 1 1 12em;
   border: 1px solid gray;
+  position: relative;
+  overflow: hidden;
+}
+
+.dato:last-child {
+  flex: 1 1 100%;
+}
+
+.dato::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  top: -40px;
+  right: -40px;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(135deg, #ffe5ec, #fde2ff, #dbeafe);
+  color: #4b4453;
+  min-height: 100vh;
+  transition: 0.4s;
+}
+
+.cabecera {
+  width: min(75em, 90%);
+  margin: 2rem auto;
+  padding: 2.5rem;
+  text-align: center;
+
+  background: linear-gradient(135deg, #ff9ecf, #cdb4ff);
+
+  border-radius: 30px;
+
+  box-shadow: 0 15px 35px rgba(255, 150, 200, 0.35);
+}
+
+.cabecera h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  background: white;
+  color: #d63384;
+  font-weight: bold;
+}
+
+#saludo {
+  color: white;
+  margin: 1rem 0;
+}
+
+.panel {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 30px;
+  padding: 2rem;
+}
+
+.datos {
+  margin: 2rem 0;
+}
+
+.dato {
+  border: none;
+  border-radius: 25px;
+  padding: 1.5rem;
+  color: #444;
+  transition: 0.3s;
+}
+
+.dato:nth-child(1) {
+  background: #ffd6e7;
+}
+
+.dato:nth-child(2) {
+  background: #e4c1f9;
+}
+
+.dato:nth-child(3) {
+  background: #cde7ff;
+}
+
+.dato:nth-child(4) {
+  background: #d8f3dc;
+}
+
+.dato:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dato h3 {
+  color: #7b2cbf;
+}
+
+.dato p {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ff80ab, #b388ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(179, 136, 255, 0.4);
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+#notificaciones.visible{
+  opacity: 1;
+  
+}
+
+body.modoNocturno {
+  background: linear-gradient(135deg, #1f1b2e, #2b2d42, #1d3557);
+  color: #f8f8f8;
+}
+
+body.modoNocturno .cabecera {
+  background: linear-gradient(135deg, #7b2cbf, #5a189a);
+}
+
+body.modoNocturno .panel {
+  background: #2d3142;
+}
+
+body.modoNocturno .dato:nth-child(1) {
+  background: #5b2c6f;
+  color: white;
+}
+
+body.modoNocturno .dato:nth-child(2) {
+  background: #3f3d56;
+  color: white;
+}
+
+body.modoNocturno .dato:nth-child(3) {
+  background: #355070;
+  color: white;
+}
+
+body.modoNocturno .dato:nth-child(4) {
+  background: #386641;
+  color: white;
+}
+
+body.modoNocturno #campoMensaje {
+  background: #3d405b;
+  color: white;
+}
+
+body.modoNocturno #contadorMensajes {
+  background: #7b2cbf;
+  color: white;
+}
+
+body.modoNocturno .listaMensajes p {
+  background: #4a4e69;
+  color: white;
+}
+
+.tituloSeccion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#contadorMensajes {
+  background: #ffd6e7;
+  color: #d63384;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.formularioMensajes {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+#campoMensaje {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  background: #f8f4ff;
+}
+
+.listaMensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listaMensajes p {
+  background: #ffe5ec;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
 }
