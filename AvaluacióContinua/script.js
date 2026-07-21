@@ -76,7 +76,7 @@ btnVaciar.addEventListener('click', vaciarCarrito);
 
 botonComprar.addEventListener('click', comprarCarrito);
 
-//TOAST
+//NOTIFICACIONES
 function crearToast(titulo, mensaje) {
     const toast = document.createElement('div');
     toast.className = 'toast';
