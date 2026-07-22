@@ -92,7 +92,7 @@ header {
 }
 
 .texto h2 {
-  color: var(--gold);
+  color: #c9a35a;
   font-size: 50px;
   text-align: left;
   margin-bottom: 20px;
@@ -100,7 +100,7 @@ header {
 }
 
 .texto p {
-  color: var(--dark-stone);
+  color: #3e4348;
   font-size: 20px;
   line-height: 1.8;
 }
@@ -141,12 +141,12 @@ header {
 }
 
 .card h3 {
-  color: var(--gold);
+  color: #c9a35a;
   padding: 15px 15px 5px;
 }
 
 .card p {
-  color: var(--dark-stone);
+  color: #3e4348;
   padding: 0 15px;
 }
 
@@ -154,7 +154,7 @@ header {
   display: block;
   padding: 15px;
   font-weight: bold;
-  color: var(--storm-blue);
+  color: #3f5f7a;
 }
 
 .card button {
@@ -163,20 +163,20 @@ header {
   padding: 12px;
   border: none;
   border-radius: 10px;
-  background: var(--gold);
+  background: #c9a35a;
   color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .card button:hover {
-  background: var(--storm-blue);
+  background: #3f5f7a;
 }
 
 .card label {
   display: block;
   margin: 0 15px 5px;
-  color: var(--dark-stone);
+  color: #3e4348;
   font-size: 0.9rem;
 }
 
@@ -184,7 +184,7 @@ header {
   width: calc(100% - 30px);
   margin: 0 15px 15px;
   padding: 8px;
-  border: 1px solid var(--stone);
+  border: 1px solid #7a726a;
   border-radius: 8px;
 }
 
@@ -193,7 +193,7 @@ h2 {
 }
 
 footer {
-  background-color: var(--storm-blue);
+  background-color: #3f5f7a;
   margin-top: 80px;
   padding: 40px 10% 20px;
   display: flex;
@@ -202,13 +202,13 @@ footer {
 }
 
 .footer-info h3 {
-  color: var(--gold);
+  color: #c9a35a;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .footer-info p {
-  color: var(--mist);
+  color: #f2f3f1;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -220,13 +220,13 @@ footer {
 }
 
 .footer-links a {
-  color: var(--mist);
+  color: #f2f3f1;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  color: var(--gold);
+  color: #c9a35a;
 }
 
 .derechos-reservados {
@@ -234,7 +234,7 @@ footer {
   padding-top: 20px;
   text-align: center;
   font-size: 0.9rem;
-  color: var(--mist);
+  color: #f2f3f1;
 }
 
 .carrito {
@@ -267,7 +267,7 @@ footer {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
-  background: var(--storm-blue);
+  background: #3f5f7a;
   color: white;
   cursor: pointer;
   transition: 0.3s;
@@ -275,11 +275,11 @@ footer {
 
 #vaciarCarrito:hover,
 #comprarCarrito:hover {
-  background: var(--gold);
+  background: #c9a35a;
 }
 
 .carrito-panel h2 {
-  color: var(--gold);
+  color: #c9a35a;
   font-size: 40px;
   margin-bottom: 20px;
   text-shadow: 2px 2px 2px black;
@@ -336,7 +336,7 @@ footer {
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-    background: var(--storm-blue);
+    background: #3f5f7a;
   }
   .menu ul {
     flex-direction: column;
