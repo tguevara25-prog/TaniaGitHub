@@ -1,3 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #ffd8ef, #f5dcff, #e8dfff);
+  min-height: 100vh;
+  padding: 50px;
+}
+/* 
+.error{
+  color: #b54782;
+}
+
+.correcto{
+  color: #9d5fff;
+} */
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+h1 {
+  grid-column: 1/-1;
+  text-align: center;
+  color: #bf3b87;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+h1::before {
+  content: "🎨 ";
+}
+
+section {
+  background: #fffafc;
+  border-radius: 30px;
+  padding: 40px;
+  border: 3px solid #ffe0f1;
+  box-shadow: 0 12px 30px rgba(212, 123, 180, 0.18);
+}
+
+section:first-of-type {
+  background: linear-gradient(160deg, #fff, #fff0f8);
+}
+
+section:first-of-type h2::before {
+  content: "🌸 ";
+}
+
+section:last-of-type h2::before {
+  content: "📝 ";
+}
+
+h2 {
+  color: #cc3d8d;
+  margin-bottom: 25px;
+}
+
+#actividad p {
+  margin: 18px 0;
+  line-height: 1.7;
+}
+
+#numeroPlazas {
+  background: #ff7fbf;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #b94885;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+label[for="nombre"]::before {
+  content: "👩 ";
+}
+
+label[for="turno"]::before {
+  content: "🕒 ";
+}
+
+label[for="comentario"]::before {
+  content: "💬 ";
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 18px;
+  border: 2px solid #f8c7e3;
+  background: white;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #d36cb0;
+  box-shadow: 0 0 12px rgba(211, 108, 176, 0.2);
+}
+
+textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+small {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  color: #c06c9f;
+}
+
+button {
+  width: 90%;
+  margin: 10px auto 0;
+  display: block;
+
+  padding: 15px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+
+  background: linear-gradient(90deg, #ff7cbc, #b36cff);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ff69b4, #9d5fff);
+}
+
+#mensajeReserva,
+#resultadoFormulario {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #b54782;
+}
+
 .reservada {
-  background-color: violet;
+  background: #ff4fa3 !important;
+  color: white;
+}
+
+.participante {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding: 15px 20px;
+  background: #fff;
+  border: 2px solid #ffd6eb;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(214, 120, 181, 0.15);
+}
+
+.participante span {
+  color: #b54782;
+  font-weight: 600;
+}
+
+.btnEliminar {
+  width: 110px;
+  height: 38px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #ff6fa8, #ff4d8d);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btnEliminar:hover {
+  background: linear-gradient(90deg, #ff4d8d, #ff2f7a);
+}
+
+.btnEliminar:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding: 30px;
+  }
 }

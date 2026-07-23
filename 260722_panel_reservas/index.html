@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilos.css">
   <title>Panel de reservas</title>
 </head>
+
 <body>
   <main>
     <h1>Panel de reservas</h1>
@@ -17,7 +19,44 @@
       <button id="btnReserva">Disponible</button>
       <p id="mensajeReserva"></p>
     </section>
+    <section>
+      <h2>Datos de la reserva</h2>
+      <form id="formularioReserva">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre aquí">
+          <small id="mensajeNombre"></small>
+        </div>
+
+        <div>
+          <label for="turno">Turno</label>
+          <select name="" id="turno">
+            <option value="">Elige tu turno</option>
+            <option value="mañana">Mañana</option>
+            <option value="tarde">Tarde</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="comentario">Comentario</label>
+          <textarea id="comentario" maxlength="100" placeholder="Tus muy valiosos comentarios aquí"></textarea>
+          <small>
+            <span id="contadorCaracteres">0 de 100</span>
+          </small>
+        </div>
+
+        <button type="submit">Confirmar datos</button>
+      </form>
+      <p id="resultadoFormulario"></p>
+    </section>
+    <section>
+      <h2>Participantes</h2>
+      <div id="listaParticipantes">
+        <p class="aviso">Todavía no hay participantes</p>
+      </div>
+    </section>
   </main>
   <script src="script.js" defer></script>
 </body>
+
 </html>
