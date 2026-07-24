@@ -10,7 +10,7 @@ const campoNombre = document.getElementById('nombre')
 const mensajeNombre = document.getElementById('mensajeNombre')
 const selectorTurno = document.getElementById('turno')
 const comentario = document.getElementById('comentario')
-const contadorCaracteres = document.getElementById('contadorCaracteres')
+let contadorCaracteres = document.getElementById('contadorCaracteres')
 const resultadoFormulario = document.getElementById('resultadoFormulario')
 
 const listaParticipantes = document.getElementById('listaParticipantes')
@@ -21,31 +21,32 @@ let plazasDisponibles = 5
 //Listeners
 btnReserva.addEventListener('mouseenter', ()=>{
   if(reservado){
-    btnReserva.textContent = 'Cancelar Reserva'
+    btnReserva.textContent = 'Cancelar pre-reserva'
   } else{
-    btnReserva.textContent = 'Reservar'
+    btnReserva.textContent = 'Pre-reservar'
   }
 })
 
 btnReserva.addEventListener('mouseleave', ()=>{
   if(reservado){
-    btnReserva.textContent = 'Reservado'
+    btnReserva.textContent = 'Pre-reservado'
   } else{
     btnReserva.textContent = 'Disponible'
   }
 })
 
 btnReserva.addEventListener('click', ()=>{
+  e.stopPropagation()
   reservado = !reservado
   if(reservado){
-    plazasDisponibles--
-    btnReserva.textContent = 'Reservado'
-    mensajeReserva.textContent = 'Reserva realizada'
+    // plazasDisponibles--
+    btnReserva.textContent = 'Pre-reservado'
+    // mensajeReserva.textContent = 'Reserva realizada'
+    mensajeReserva.textContent = 'Pre-reserva iniciada, completa tus datos'
     mensajeReserva.classList.add('reservada')
   } else {
-    plazasDisponibles++
     btnReserva.textContent = 'Disponible'
-    mensajeReserva.textContent = 'Reserva cancelada'
+    mensajeReserva.textContent = 'Pre-reserva cancelada'
     mensajeReserva.classList.remove('reservada')
   }
   numeroPlazas.textContent = plazasDisponibles
@@ -106,8 +107,11 @@ formularioReserva.addEventListener('submit', (e)=>{
     resultadoFormulario.classList.remove('correcto')
     return
   }
-  resultadoFormulario.textContent = `Reserva confirmada para ${nombre} en el turno de ${turno}`
+  plazasDisponibles--
 
+  numeroPlazas.textContent = plazasDisponibles
+  resultadoFormulario.textContent = `Reserva confirmada para ${nombre} en el turno de ${turno}`
+  
   resultadoFormulario.classList.remove('error')
   resultadoFormulario.classList.add('correcto')
 
@@ -126,6 +130,10 @@ formularioReserva.addEventListener('submit', (e)=>{
   formularioReserva.reset()
   contadorCaracteres = '0'
   mensajeNombre.textContent = ''
+
+  reservado = false
+  btnReserva.textContent = ' Disponible'
+  actividad.classList.remove('reservada')
 })
 
 document.addEventListener('keydown', (e)=>{
@@ -134,4 +142,25 @@ document.addEventListener('keydown', (e)=>{
     mensajeReserva.textContent = ''
     resultadoFormulario.textContent = ''
   }
+})
+
+//Delegación de eventos
+listaParticipantes.addEventListener('click', (e)=>{
+  // console.log(e.target)
+  if(e.target.classList.contains('btnEliminar')){
+    console.log('Has pulsado eliminar')
+    e.target.parentElement.remove()
+    plazasDisponibles++
+    numeroPlazas.textContent = plazasDisponibles
+  }
+  const participantes = listaParticipantes.querySelectorAll('.participante')
+  if(participantes.length === 0){
+    listaParticipantes.innerHTML = `<p class="aviso">Todavía no hay participantes</p>`
+  }
+})
+
+//Propagación
+actividad.addEventListener('click', (e)=>{
+  console.log("Target:", e.target)
+  console.log("Current target:", e.currentTarget)
 })
