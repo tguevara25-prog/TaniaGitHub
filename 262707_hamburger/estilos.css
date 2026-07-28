@@ -1,0 +1,1130 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #05060a;
+    --bg-soft: #0a0d14;
+    --card: rgba(15, 18, 28, 0.88);
+    --card-hover: rgba(20, 24, 37, 0.96);
+
+    --white: #f8fafc;
+    --text: #dce2ec;
+    --muted: #7f899b;
+
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+
+    --red: #ff416c;
+    --orange: #ff9f43;
+    --yellow: #facc15;
+    --cyan: #22d3ee;
+    --blue: #38bdf8;
+    --green: #34d399;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.17);
+
+    --radius: 28px;
+
+    --shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(139, 92, 246, 0.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(34, 211, 238, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(244, 114, 182, 0.08),
+            transparent 30%
+        ),
+        var(--bg);
+
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        transparent 90%
+    );
+
+    pointer-events: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    z-index: 1000;
+
+    width: calc(100% - 36px);
+    max-width: 1180px;
+    height: 100px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+
+    transform: translateX(-50%);
+
+    background: rgba(7, 9, 16, 0.72);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.navbar::before {
+    content: "";
+
+    position: absolute;
+    top: -1px;
+    left: 18%;
+
+    width: 64%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--purple),
+        var(--cyan),
+        transparent
+    );
+}
+
+.navbar .contenedor {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--white);
+
+    font-size: 1.05rem;
+    font-weight: 900;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbar .logo::before {
+    content: "";
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--purple);
+
+    box-shadow:
+        0 0 8px var(--purple),
+        0 0 22px rgba(139, 92, 246, 0.8);
+}
+
+.navbar i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.navbar i:hover {
+    color: white;
+
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+
+    transform: translateY(-2px);
+}
+
+
+/* MENU */
+
+nav {
+    display: none;
+
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 999;
+
+    width: min(85%, 350px);
+    height: calc(100vh - 36px);
+
+    padding: 90px 22px 25px;
+
+    background: rgba(8, 11, 18, 0.96);
+
+    border: 1px solid var(--border);
+    border-radius: 26px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+nav::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--purple),
+        var(--cyan),
+        transparent
+    );
+}
+
+.mostrar {
+    display: block;
+}
+
+nav li {
+    margin: 7px 0;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+
+    padding: 15px 16px;
+
+    color: var(--muted);
+
+    font-size: 0.88rem;
+    font-weight: 650;
+
+    border: 1px solid transparent;
+    border-radius: 14px;
+
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    color: white;
+
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.2);
+
+    transform: translateX(5px);
+}
+
+#salir {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    margin: 0;
+}
+
+
+/* SECCIONES */
+
+.casos {
+    position: relative;
+
+    width: min(1120px, calc(100% - 30px));
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 145px 0 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.casos::before {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    opacity: 0.08;
+
+    pointer-events: none;
+}
+
+#transformaciones::before {
+    background: var(--red);
+}
+
+#temporizador::before {
+    background: var(--purple);
+}
+
+#movimiento::before {
+    background: var(--orange);
+}
+
+#cursor::before {
+    background: var(--cyan);
+}
+
+
+/* TARJETA PRINCIPAL */
+
+.casos .card {
+    position: relative;
+
+    width: 100% !important;
+    max-width: 920px !important;
+    min-height: 500px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.012)
+        ),
+        var(--card);
+
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.casos .card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--border-hover) !important;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.5),
+        0 0 70px rgba(139, 92, 246, 0.05);
+}
+
+
+/* LUZ SUPERIOR */
+
+.casos .card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 10%;
+
+    width: 80%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--purple),
+        var(--cyan),
+        transparent
+    );
+
+    opacity: 0.9;
+}
+
+
+/* REFLEJO */
+
+.casos .card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.035) 45%,
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+
+/* CONTENIDO CARD */
+
+.casos .card-body {
+    width: 100%;
+
+    padding: 55px 55px 50px !important;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* TITULOS */
+
+.casos .card-title {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    margin-bottom: 30px !important;
+
+    color: var(--white) !important;
+
+    font-size: clamp(
+        1.4rem,
+        3vw,
+        2rem
+    ) !important;
+
+    font-weight: 850 !important;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+
+    text-align: center;
+
+    text-shadow:
+        0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.casos .card-title::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin: 15px auto 0;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        90deg,
+        var(--purple),
+        var(--cyan)
+    );
+
+    box-shadow:
+        0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+
+/* CONTADOR */
+
+#contador {
+    position: relative;
+
+    min-width: 210px;
+
+    margin: 10px 0 30px;
+    padding: 30px 40px;
+
+    color: var(--white) !important;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: clamp(
+        3.5rem,
+        10vw,
+        6rem
+    ) !important;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139, 92, 246, 0.12),
+            rgba(34, 211, 238, 0.05)
+        );
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 24px;
+
+    box-shadow:
+        inset 0 0 35px rgba(139, 92, 246, 0.05),
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    text-shadow:
+        0 0 15px rgba(167, 139, 250, 0.7),
+        0 0 40px rgba(139, 92, 246, 0.3);
+}
+
+
+/* BOTONERA */
+
+.botones {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.botones button {
+    position: relative;
+
+    min-width: 105px;
+
+    padding: 12px 17px;
+
+    color: white !important;
+
+    font-family: inherit;
+    font-size: 0.78rem !important;
+    font-weight: 750;
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.botones button:hover {
+    color: white !important;
+
+    transform: translateY(-4px);
+
+    filter: brightness(1.12);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.06);
+}
+
+.botones button:active {
+    transform: translateY(-1px);
+}
+
+
+/* BOTONES TRANSFORMACIONES */
+
+#transformaciones .botones button {
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #be123c
+        ) !important;
+}
+
+#transformaciones .botones button:hover {
+    box-shadow:
+        0 15px 35px rgba(239, 68, 68, 0.25);
+}
+
+
+/* BOTONES TEMPORIZADOR */
+
+#temporizador .botones button {
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        ) !important;
+}
+
+#temporizador .botones button:hover {
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, 0.3);
+}
+
+
+/* BOTONES MOVIMIENTO */
+
+#movimiento .botones button {
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #d97706
+        ) !important;
+}
+
+#movimiento .botones button:hover {
+    box-shadow:
+        0 15px 35px rgba(245, 158, 11, 0.3);
+}
+
+
+/* BOTONES CURSOR */
+
+#cursor .botones button {
+    background:
+        linear-gradient(
+            135deg,
+            #06b6d4,
+            #0284c7
+        ) !important;
+}
+
+#cursor .botones button:hover {
+    box-shadow:
+        0 15px 35px rgba(6, 182, 212, 0.3);
+}
+
+
+/* CAJA ANIMADA */
+
+.cajaAnimada {
+    position: relative;
+
+    width: 90px;
+    height: 90px;
+
+    margin: 20px 0 25px;
+
+    flex-shrink: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff416c,
+            #ff4b2b
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 45px rgba(255, 65, 108, 0.25),
+        inset 0 1px rgba(255, 255, 255, 0.25);
+
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.4s ease,
+        border-radius 0.5s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.cajaAnimada::before {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+}
+
+.cajaAnimada::after {
+    content: "";
+
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    top: 10px;
+    left: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    filter: blur(8px);
+}
+
+
+/* TRANSFORMACIONES */
+
+.escalar {
+    transform: scale(1.5);
+
+    box-shadow:
+        0 30px 60px rgba(255, 65, 108, 0.35),
+        0 0 45px rgba(255, 65, 108, 0.2);
+}
+
+.rotar {
+    transform: rotate(20deg);
+}
+
+.opacidad {
+    opacity: 0.3;
+}
+
+.redondear {
+    border-radius: 50%;
+}
+
+.redondear::before {
+    border-radius: 50%;
+}
+
+.combo {
+    background:
+        linear-gradient(
+            135deg,
+            #ffb347,
+            #ff7b00
+        );
+
+    border-radius: 50%;
+    opacity: 0.65;
+
+    transform:
+        scale(1.5)
+        rotate(20deg);
+
+    box-shadow:
+        0 30px 60px rgba(255, 123, 0, 0.35),
+        0 0 45px rgba(255, 165, 0, 0.2);
+}
+
+.combo::before {
+    border-radius: 50%;
+}
+
+
+/* ZONA INTERACTIVA */
+
+.controlEspacio {
+    position: relative;
+
+    width: 100%;
+    height: 210px;
+
+    margin: 10px 0 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 22px;
+
+    box-shadow:
+        inset 0 0 50px rgba(139, 92, 246, 0.04),
+        inset 0 1px rgba(255, 255, 255, 0.06),
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+.controlEspacio::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 28px 28px;
+
+    pointer-events: none;
+}
+
+.controlEspacio::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    top: 5px;
+    right: 5%;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    filter: blur(100px);
+
+    opacity: 0.07;
+
+    pointer-events: none;
+}
+
+
+/* CIRCULO */
+
+.circulo {
+    position: absolute;
+
+    top: 79px;
+    left: 20px;
+
+    width: 52px;
+    height: 52px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white 0%,
+            #67e8f9 15%,
+            #06b6d4 55%,
+            #0891b2 100%
+        );
+
+    border: 3px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px rgba(34, 211, 238, 0.8),
+        0 0 40px rgba(34, 211, 238, 0.3);
+
+    transition:
+        left 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        top 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* MOSCA */
+
+.mosca {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 17px;
+    height: 17px;
+
+    background: #05070c;
+
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(34, 211, 238, 0.15);
+
+    pointer-events: none;
+}
+
+
+/* SEPARADORES VISUALES */
+
+#transformaciones .card {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(255, 65, 108, 0.04);
+}
+
+#temporizador .card {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(139, 92, 246, 0.06);
+}
+
+#movimiento .card {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(245, 158, 11, 0.05);
+}
+
+#cursor .card {
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(34, 211, 238, 0.05);
+}
+
+
+/* RESPONSIVE */
+
+@media (min-width: 700px) {
+
+    #burger,
+    #salir {
+        display: none;
+    }
+
+    .navbar nav {
+        position: static;
+
+        display: flex;
+        align-items: center;
+
+        width: auto;
+        height: auto;
+
+        padding: 0;
+
+        background: transparent;
+
+        border: none;
+        border-radius: 0;
+
+        box-shadow: none;
+
+        backdrop-filter: none;
+    }
+
+    .navbar nav::before {
+        display: none;
+    }
+
+    .navbar ul {
+        display: flex;
+        align-items: center;
+
+        gap: 3px;
+    }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .navbar nav a {
+        padding: 9px 12px;
+
+        font-size: 1.5rem;
+
+        border-radius: 10px;
+    }
+
+    .navbar nav a:hover {
+        transform: none;
+    }
+}
+
+
+@media (max-width: 699px) {
+
+    .navbar {
+        top: 10px;
+
+        width: calc(100% - 20px);
+        height: 60px;
+    }
+
+    .navbar .logo {
+        font-size: 0.9rem;
+    }
+
+    .casos {
+        width: calc(100% - 20px);
+
+        min-height: 100vh;
+
+        padding:
+            105px
+            0
+            55px;
+    }
+
+    .casos .card {
+        min-height: 500px;
+    }
+
+    .casos .card-body {
+        padding:
+            40px
+            22px
+            35px !important;
+    }
+
+    .casos .card-title {
+        font-size: 1.3rem !important;
+
+        margin-bottom: 25px !important;
+    }
+
+    .cajaAnimada {
+        width: 75px;
+        height: 75px;
+    }
+
+    .controlEspacio {
+        height: 180px;
+    }
+
+    .circulo {
+        top: 64px;
+    }
+
+    .botones {
+        gap: 5px;
+    }
+
+    .botones button {
+        min-width: 90px;
+
+        padding: 10px 12px;
+
+        font-size: 0.7rem !important;
+    }
+
+    #contador {
+        min-width: 170px;
+
+        padding: 25px 20px;
+
+        font-size: 3.5rem !important;
+        letter-spacing: 4px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
