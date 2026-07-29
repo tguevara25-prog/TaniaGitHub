@@ -25,8 +25,9 @@
                 <li><a href="#temporizador">Temporizador</a></li>
                 <li><a href="#movimiento">Movimiento</a></li>
                 <li><a href="#cursor">Cursor</a></li>
-                <li><a href="#">Modal</a></li>
-                <li><a href="#">Notificación</a></li>
+                <li><a href="#escapista">Escapista</a></li>
+                <li><a href="#contenedorModal">Modal</a></li>
+                <li><a href="#contenedorNotificacion">Notificación</a></li>
             </ul>
         </nav>
     </div>
@@ -85,6 +86,38 @@
         </div>
     </div>
 
+    <div class="casos" id="escapista">
+        <div class="card w-75" style="width: 18rem;">
+            <h5 class="card-title">Caja escapista</h5>
+            <div class="controlEspacio">
+                <div class="cajaEscapista"></div>
+            </div>
+            <div class="botones">
+                <button type="button" id="btnInicioEscape" class="btn btn-dark">Inicio</button>
+                <button type="button" id="btnFinEscape" class="btn btn-dark">Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="casos" id="contenedorModal">
+        <div class="card w-75" style="width: 18rem;">
+            <h5 class="card-title">Modal</h5>
+            <div class="modal">¡Hola! Soy un modal</div>
+            <div class="botones">
+                <button type="button" id="btnMostrar" class="btn btn-success">Mostrar</button>
+                <button type="button" id="btnOcultar" class="btn btn-success">Ocultar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="casos" id="contenedorNotificacion">
+        <div class="card w-75" style="width: 18rem;">
+            <h5 class="card-title">Notificacion</h5>
+            <div class="botones">
+                <button type="button" id="btnNotificar" class="btn btn-primary">Notificar</button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/0bc510ca7a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
