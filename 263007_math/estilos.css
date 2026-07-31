@@ -37,9 +37,7 @@ body {
 header {
   text-align: center;
   padding: 70px 20px 55px;
-
   border-bottom: 1px solid var(--borde);
-
   background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)), radial-gradient(circle, #164d39 0%, #080808 65%);
 }
 
@@ -48,9 +46,7 @@ header h1 {
   font-size: clamp(3rem, 8vw, 6rem);
   letter-spacing: 12px;
   text-transform: uppercase;
-
   color: var(--dorado-claro);
-
   text-shadow:
     0 2px 0 #8b6c16,
     0 0 20px rgba(212, 175, 55, 0.35),
@@ -68,7 +64,6 @@ header h1::after {
 header p {
   max-width: 700px;
   margin: 18px auto 0;
-
   color: #c8c1b0;
   font-size: 0.95rem;
   letter-spacing: 2px;
