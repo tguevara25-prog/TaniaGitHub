@@ -65,7 +65,7 @@ btnLanzarDado.addEventListener('click', ()=>{
     const nuevoResultado = document.createElement('span')
     nuevoResultado.textContent = resultado
     listaLanzamientos.prepend(nuevoResultado)
-    if(listaLanzamientos.children.length > 10){
+    if(listaLanzamientos.children.length > 9){
       // listaLanzamientos.lastElementChild.remove()
       btnLanzarDado.disabled = true
     }
