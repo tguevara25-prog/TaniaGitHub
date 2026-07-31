@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  --negro: #080808;
+  --negro-suave: #111111;
+  --verde: #0b3d2e;
+  --verde-claro: #145c43;
+  --rojo: #7a1018;
+  --rojo-claro: #a71924;
+  --dorado: #d4af37;
+  --dorado-claro: #f3d477;
+  --blanco: #f5f1e6;
+  --gris: #aaa;
+  --borde: rgba(212, 175, 55, 0.35);
+  --sombra: rgba(0, 0, 0, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--blanco);
+  font-family: "Montserrat", sans-serif;
+
+  background:
+    radial-gradient(circle at 50% 0%, rgba(20, 92, 67, 0.35), transparent 35%),
+    radial-gradient(circle at 10% 30%, rgba(122, 16, 24, 0.15), transparent 25%), linear-gradient(135deg, #050505, #111, #050505);
+
+  background-attachment: fixed;
+  padding-bottom: 80px;
+}
+
+header {
+  text-align: center;
+  padding: 70px 20px 55px;
+
+  border-bottom: 1px solid var(--borde);
+
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)), radial-gradient(circle, #164d39 0%, #080808 65%);
+}
+
+header h1 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 12px;
+  text-transform: uppercase;
+
+  color: var(--dorado-claro);
+
+  text-shadow:
+    0 2px 0 #8b6c16,
+    0 0 20px rgba(212, 175, 55, 0.35),
+    0 8px 30px #000;
+}
+
+header h1::before,
+header h1::after {
+  content: " ♦ ";
+  color: var(--rojo-claro);
+  font-size: 0.35em;
+  vertical-align: middle;
+}
+
+header p {
+  max-width: 700px;
+  margin: 18px auto 0;
+
+  color: #c8c1b0;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+}
+
+.contenedor {
+  width: min(1100px, 92%);
+  margin: 55px auto;
+
+  display: grid;
+  gap: 35px;
+}
+
+.estacion {
+  position: relative;
+  overflow: hidden;
+
+  padding: 42px;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+
+  background: linear-gradient(145deg, rgba(19, 19, 19, 0.97), rgba(6, 6, 6, 0.98));
+
+  box-shadow:
+    0 25px 60px var(--sombra),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.estacion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(90deg, transparent, var(--dorado), transparent);
+}
+
+.estacion:hover {
+  transform: translateY(-4px);
+  border-color: rgba(243, 212, 119, 0.65);
+}
+
+.numEstacion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+
+  border: 1px solid var(--dorado);
+  border-radius: 50%;
+
+  color: var(--dorado-claro);
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+
+  box-shadow:
+    0 0 15px rgba(212, 175, 55, 0.15),
+    inset 0 0 12px rgba(212, 175, 55, 0.08);
+}
+
+.estacion h2 {
+  margin-bottom: 10px;
+
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  color: var(--dorado-claro);
+  letter-spacing: 1px;
+}
+
+.estacion > p {
+  color: var(--gris);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.zona-controlada,
+.zona-controles {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  margin: 25px 0;
+}
+
+label {
+  color: #d9d1be;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 13px 16px;
+
+  color: var(--blanco);
+  background: #090909;
+
+  border: 1px solid #555;
+  border-radius: 8px;
+
+  outline: none;
+  font-family: inherit;
+
+  transition: 0.25s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--dorado);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+
+  padding: 14px 24px;
+
+  border: 1px solid #b99020;
+  border-radius: 8px;
+
+  background: linear-gradient(145deg, #e4c35c, #b78c1e);
+
+  color: #171105;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.6),
+    0 0 18px rgba(212, 175, 55, 0.2);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.resultadosRedondeos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.resultadosRedondeos article {
+  text-align: center;
+  padding: 25px 15px;
+
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+
+  background: linear-gradient(145deg, #121212, #080808);
+
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.resultadosRedondeos span {
+  display: block;
+
+  color: var(--dorado);
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+}
+
+.resultadosRedondeos p {
+  margin: 12px 0;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+.resultadosRedondeos small {
+  color: #777;
+}
+
+.pantalla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 150px;
+  margin: 25px 0;
+
+  border: 2px solid #836b25;
+  border-radius: 12px;
+
+  background: radial-gradient(circle, #173d2f, #06130e);
+
+  box-shadow:
+    inset 0 0 35px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(10, 80, 55, 0.15);
+}
+
+#numeroAleatorio {
+  color: var(--dorado-claro);
+
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 5px;
+
+  text-shadow: 0 0 15px rgba(243, 212, 119, 0.35);
+}
+
+.dado {
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 30px auto;
+
+  border: 3px solid var(--dorado);
+  border-radius: 18px;
+
+  background: radial-gradient(circle at 35% 30%, #9c222b, #4c080d 70%);
+
+  color: white;
+
+  font-family: "Cinzel", serif;
+  font-size: 4rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.7),
+    inset 0 0 20px rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(122, 16, 24, 0.25);
+
+  transition: transform 0.2s ease;
+}
+
+.dado:hover {
+  transform: rotate(3deg) scale(1.03);
+}
+
+#mensajeDado {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--dorado-claro);
+}
+
+#historial {
+  margin-top: 35px;
+  padding: 20px;
+
+  border-radius: 10px;
+  border-left: 3px solid var(--dorado);
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+#historial h3 {
+  margin-bottom: 12px;
+
+  font-family: "Cinzel", serif;
+  color: var(--dorado);
+}
+
+#listaLanzamientos {
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.marcadores {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  margin: 25px 0;
+}
+
+.marcadores p {
+  padding: 10px 16px;
+
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 20px;
+
+  background: #0d0d0d;
+  color: #cfc7b4;
+
+  font-size: 0.85rem;
+}
+
+#estadoMarcador {
+  color: var(--dorado-claro);
+  border-color: var(--dorado);
+}
+
+.dueloDados {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: center;
+  gap: 25px;
+
+  margin: 35px 0;
+}
+
+.dueloDados article {
+  text-align: center;
+}
+
+.dueloDados h3 {
+  margin-bottom: 15px;
+
+  font-family: "Cinzel", serif;
+  color: var(--dorado-claro);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#dadoJugador,
+#dadoMaquina {
+  width: 130px;
+  height: 130px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+
+  border: 2px solid var(--dorado);
+  border-radius: 16px;
+
+  background: linear-gradient(145deg, #161616, #080808);
+
+  color: white;
+
+  font-family: "Cinzel", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(212, 175, 55, 0.05);
+}
+
+#versus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 55px;
+  height: 55px;
+
+  margin: auto;
+
+  border: 1px solid var(--rojo-claro);
+  border-radius: 50%;
+
+  background: #38090d;
+
+  color: var(--dorado-claro);
+
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+  box-shadow: 0 0 20px rgba(122, 16, 24, 0.3);
+}
+
+#versus::after {
+  content: "VS";
+}
+
+#resultadoDuelo {
+  min-height: 30px;
+
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: var(--dorado-claro);
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+}
+
+#btnReiniciar {
+  margin-left: 10px;
+
+  background: transparent;
+  border-color: #6d171d;
+  color: #d66a71;
+
+  box-shadow: none;
+}
+
+#btnReiniciar:hover {
+  background: rgba(122, 16, 24, 0.2);
+  color: #ff9da3;
+}
+
+@keyframes brillo {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(243, 212, 119, 0.2);
+  }
+
+  50% {
+    text-shadow: 0 0 25px rgba(243, 212, 119, 0.55);
+  }
+}
+
+#numeroAleatorio {
+  animation: brillo 2.5s infinite;
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 50px 15px 40px;
+  }
+
+  header h1 {
+    letter-spacing: 5px;
+  }
+
+  .estacion {
+    padding: 28px 20px;
+  }
+
+  .resultadosRedondeos {
+    grid-template-columns: 1fr;
+  }
+
+  .zona-controlada,
+  .zona-controles {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  input,
+  select,
+  .zona-controlada button,
+  .zona-controles button {
+    width: 100%;
+  }
+
+  .dueloDados {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #versus {
+    margin: 5px auto;
+  }
+
+  #btnReiniciar {
+    margin: 10px 0 0;
+  }
+
+  .marcadores {
+    flex-direction: column;
+  }
+
+  .marcadores p {
+    width: 100%;
+    text-align: center;
+  }
+}
