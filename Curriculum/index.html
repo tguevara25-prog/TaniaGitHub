@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Currículum vitae de Tània Guevara González">
+  <title>Currículum | Tània Guevara González</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="logo" href="#inicio">Tània Guevara González</a>
+
+      <nav aria-label="Navegación principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#educacion">Educación</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Cambiar tema">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">CURRÍCULUM VITAE</p>
+          <h1>Tània Guevara González</h1>
+          <h2>Estudiante / Profesional de tu área</h2>
+          <p class="intro">
+            Soy una persona responsable, organizada y con ganas de seguir aprendiendo.
+            Me interesa desarrollarme en un entorno donde pueda aportar mis habilidades y adquirir experiencia.
+          </p>
+
+          <div class="buttons">
+            <button class="btn primary" onclick="window.print()">Guardar como PDF</button>
+            <a class="btn secondary" href="#contacto">Contactarme</a>
+          </div>
+        </div>
+
+        <div class="profile-card" aria-label="Información de contacto rápida">
+          <div class="avatar">TG</div>
+          <p><strong>📍 Barcelona, España</strong></p>
+          <p><a href="mailto:correo@ejemplo.com">✉ correo@ejemplo.com</a></p>
+          <p><a href="https://www.linkedin.com/" target="_blank" rel="noopener">in LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="section">
+      <div class="container">
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="section-text">
+          Aquí escribe una presentación breve. Puedes explicar quién eres, qué estudias o a qué te dedicas,
+          cuáles son tus principales fortalezas y qué tipo de oportunidad estás buscando.
+        </p>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Experiencia</h2>
+
+        <article class="item">
+          <div class="item-date">2024 – Actualidad</div>
+          <div>
+            <h3>Nombre del puesto</h3>
+            <p class="muted">Empresa / Organización</p>
+            <p>
+              Describe brevemente tus principales funciones y algún resultado importante.
+              Intenta usar información concreta y fácil de leer.
+            </p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-date">2023 – 2024</div>
+          <div>
+            <h3>Otro puesto</h3>
+            <p class="muted">Empresa / Organización</p>
+            <p>
+              Añade aquí otra experiencia relevante, prácticas profesionales,
+              voluntariado o trabajo independiente.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="educacion" class="section">
+      <div class="container">
+        <h2 class="section-title">Educación</h2>
+
+        <article class="item">
+          <div class="item-date">2026 – Actualidad</div>
+          <div>
+            <h3>Grado en Estudios Ingleses</h3>
+            <p class="muted">Universitat de Barcelona (UB)</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-date">2026</div>
+          <div>
+            <h3>Certificado de Profesionalidad de Confección y Publicación de Páginas Web (IFCD0110)</h3>
+            <p class="muted">Centre d'Estudis Politècnics</p>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="item-date">2023</div>
+          <div>
+            <h3>Certificado Cambridge English B2 First</h3>
+            <p class="muted">Cambridge English</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Habilidades</h2>
+
+        <div class="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Publicación, usabilidad, accesibilidad web (W3C)</span>
+          <span>Trabajo en equipo</span>
+          <span>Comunicación</span>
+          <span>Organización</span>
+          <span>Resolución de problemas</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:correo@ejemplo.com">
+            <strong>Email</strong>
+            <span>correo@ejemplo.com</span>
+          </a>
+
+          <a class="contact-card" href="tel:+34000000000">
+            <strong>Teléfono</strong>
+            <span>+34 000 000 000</span>
+          </a>
+
+          <a class="contact-card" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+            <strong>LinkedIn</strong>
+            <span>linkedin.com/in/tuusuario</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Tània Guevara González</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
