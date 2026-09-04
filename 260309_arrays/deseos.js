@@ -5,6 +5,12 @@ const mensajes = document.getElementById('mensajes')
 const btnUrgente = document.getElementById('btnUrgente')
 let deseos = []
 
+const deseosGuardados = localStorage.getItem('deseos')
+
+if(deseosGuardados !== null){
+  deseos = JSON.parse(deseosGuardados)
+}
+
 const btnBuscar = document.getElementById('btnBuscar')
 const inputBusqueda = document.getElementById('busqueda')
 
@@ -89,5 +95,5 @@ function mostrarDeseos(){
     li.textContent = deseos[i]
     lista.appendChild(li)
   }
-
+  localStorage.setItem('deseos', JSON.stringify(deseos))
 }
