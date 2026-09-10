@@ -1,18 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos.css">
   <title>Meteo</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <main class="contenedor">
-    <h1>El tiempo aquí</h1>
-    <button id="btnTiempo">Usar mi ubicación</button>
-    <p id="mensaje"></p>
-    <section id="resultado"></section>
+  <div id="cielo">
+    <div class="estrellas"></div>
+    <div class="sol"><div class="rayos"></div></div>
+    <div class="luna"></div>
+    <div class="nube nube-1"><span></span></div>
+    <div class="nube nube-2"><span></span></div>
+    <div class="nube nube-3"><span></span></div>
+    <div id="precipitacion"></div>
+    <div class="relampago"></div>
+  </div>
 
+  <main class="contenedor">
+    <div class="cabecera">
+      <div>
+        <p class="mini-titulo">METEO</p>
+        <h1 id="nombreLugar">Tu ubicación</h1>
+      </div>
+      <div class="icono-ubicacion">📍</div>
+    </div>
+
+    <button id="btnTiempo"><span>⌖</span> Usar mi ubicación</button>
+    <p id="mensaje"></p>
+
+    <section id="resultado">
+      <div class="estado">
+        <div id="iconoClima">☀️</div>
+        <div>
+          <p id="descripcion">Pulsa el botón</p>
+          <p id="ubicacion">Esperando ubicación...</p>
+        </div>
+      </div>
+
+      <div class="temperatura">
+        <span id="temperatura">--</span>
+        <span class="grado">°</span>
+      </div>
+
+      <div class="sensacion">
+        Sensación térmica
+        <strong id="sensacion">-- °C</strong>
+      </div>
+
+      <div class="datos">
+        <div class="dato"><div class="dato-icono">💧</div><div><span>Humedad</span><strong id="humedad">--%</strong></div></div>
+        <div class="dato"><div class="dato-icono">💨</div><div><span>Viento</span><strong id="viento">-- km/h</strong></div></div>
+        <div class="dato"><div class="dato-icono">☁️</div><div><span>Nubosidad</span><strong id="nubosidad">--%</strong></div></div>
+        <div class="dato"><div class="dato-icono">🌧️</div><div><span>Precipitación</span><strong id="precipitacionDato">-- mm</strong></div></div>
+      </div>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>

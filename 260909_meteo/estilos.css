@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: Inter, sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #38bdf8;
+}
+#cielo {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  background: linear-gradient(180deg, #0ea5e9, #38bdf8 55%, #bae6fd);
+  transition: background 1s;
+}
+body.nublado #cielo {
+  background: linear-gradient(180deg, #475569, #64748b 55%, #94a3b8);
+}
+body.lluvia #cielo {
+  background: linear-gradient(180deg, #0f172a, #1e3a4a 55%, #334155);
+}
+body.tormenta #cielo {
+  background: linear-gradient(180deg, #020617, #111827 55%, #312e81);
+}
+body.nieve #cielo {
+  background: linear-gradient(180deg, #60a5fa, #bfdbfe 55%, #e0f2fe);
+}
+body.noche #cielo {
+  background: radial-gradient(circle at 70% 15%, #312e81, transparent 28%), linear-gradient(180deg, #020617, #0f172a 55%, #172554);
+}
+
+.sol {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  top: 8%;
+  right: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff7ad, #fde047 48%, #f59e0b);
+  box-shadow:
+    0 0 35px #fde047,
+    0 0 100px #facc15;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.8s;
+  animation: flotar 5s ease-in-out infinite;
+}
+body.soleado .sol,
+body.parcial .sol {
+  opacity: 1;
+  transform: scale(1);
+}
+.rayos {
+  position: absolute;
+  inset: -35px;
+  border: 3px dashed rgba(255, 239, 100, 0.5);
+  border-radius: 50%;
+  animation: girar 25s linear infinite;
+}
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flotar {
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.nube {
+  position: absolute;
+  width: 190px;
+  height: 55px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 35px #0001;
+  opacity: 0;
+  animation: mover 25s linear infinite;
+}
+.nube:before,
+.nube:after,
+.nube span {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+.nube:before {
+  width: 75px;
+  height: 75px;
+  left: 25px;
+  bottom: 15px;
+}
+.nube:after {
+  width: 90px;
+  height: 90px;
+  right: 25px;
+  bottom: 10px;
+}
+.nube span {
+  width: 60px;
+  height: 60px;
+  left: 80px;
+  bottom: 25px;
+}
+.nube-1 {
+  top: 15%;
+  left: -220px;
+}
+.nube-2 {
+  top: 30%;
+  right: -250px;
+  animation-delay: -8s;
+}
+.nube-3 {
+  top: 48%;
+  left: -250px;
+  animation-delay: -15s;
+}
+@keyframes mover {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(calc(100vw + 350px));
+  }
+}
+body.parcial .nube-1,
+body.parcial .nube-2 {
+  opacity: 0.8;
+}
+body.nublado .nube,
+body.lluvia .nube,
+body.tormenta .nube {
+  opacity: 1;
+}
+body.nublado .nube {
+  background: #cbd5e1;
+}
+body.lluvia .nube,
+body.tormenta .nube {
+  background: #475569;
+}
+
+#precipitacion {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+body.lluvia #precipitacion,
+body.tormenta #precipitacion,
+body.nieve #precipitacion {
+  opacity: 1;
+}
+.gota {
+  position: absolute;
+  top: -30px;
+  width: 2px;
+  height: 25px;
+  background: #bae6fd99;
+  transform: rotate(12deg);
+  animation: caer linear infinite;
+}
+@keyframes caer {
+  to {
+    transform: translateY(110vh) rotate(12deg);
+  }
+}
+.copo {
+  position: absolute;
+  top: -20px;
+  color: #fff;
+  animation: nieve linear infinite;
+}
+@keyframes nieve {
+  to {
+    transform: translateY(110vh) translateX(80px) rotate(360deg);
+  }
+}
+
+.relampago{
+  position:absolute;
+  inset:0;
+  background:#fff;
+  opacity:0;
+  animation:none;
+}
+
+body.tormenta .relampago{
+  animation:flash 5s infinite;
+}
+
+@keyframes flash {
+  91%,
+  93% {
+    opacity: 0.3;
+  }
+  0%,
+  90%,
+  94%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.luna {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  top: 9%;
+  right: 14%;
+  border-radius: 50%;
+  background: #f8fafc;
+  box-shadow: 0 0 45px #fff6;
+  opacity: 0;
+  transition: 1s;
+}
+.luna:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -8px;
+  left: 25px;
+  border-radius: 50%;
+  background: #0f172a;
+}
+body.noche .luna {
+  opacity: 1;
+}
+.estrellas {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1px), radial-gradient(#fff 1px, transparent 1px), radial-gradient(#fff 2px, transparent 2px);
+  background-size:
+    80px 80px,
+    130px 130px,
+    200px 200px;
+  background-position:
+    10px 20px,
+    50px 70px,
+    100px 10px;
+}
+body.noche .estrellas {
+  opacity: 0.8;
+  animation: brillo 4s ease-in-out infinite alternate;
+}
+@keyframes brillo {
+  to {
+    opacity: 1;
+  }
+}
+
+.contenedor {
+  position: absolute;
+  width: min(92%, 470px);
+  padding:10px 32px;
+  border-radius: 35px;
+  background: #0f172a2e;
+  border: 1px solid #ffffff40;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow:
+    0 30px 80px #0004,
+    inset 0 1px #fff4;
+  animation: entrada 0.7s ease;
+}
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.mini-titulo {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  opacity: 0.65;
+  margin-bottom: 6px;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.icono-ubicacion {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: #ffffff1f;
+  border: 1px solid #ffffff26;
+}
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
+  color: #2563eb;
+  font: 700 0.95rem Inter;
+  cursor: pointer;
+  box-shadow: 0 10px 30px #0003;
+  transition: 0.25s;
+}
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px #0004;
+}
+button span {
+  font-size: 1.1rem;
+  margin-right: 7px;
+}
+#mensaje {
+  min-height: 20px;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+#resultado {
+  margin-top: 15px;
+}
+.estado {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+#iconoClima {
+  font-size: 3.5rem;
+  filter: drop-shadow(0 8px 15px #0003);
+  animation: icono 3s ease-in-out infinite;
+}
+@keyframes icono {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+#descripcion {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+#ubicacion {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+.temperatura {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#temperatura {
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: -9px;
+  line-height: 0.95;
+  text-shadow: 0 15px 40px #0003;
+}
+.grado {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-top: 8px;
+}
+.sensacion {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+.sensacion strong {
+  color: #fff;
+}
+.datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.dato {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #ffffff1a;
+  border: 1px solid #ffffff1a;
+  transition: 0.25s;
+}
+.dato:hover {
+  transform: translateY(-3px);
+  background: #ffffff29;
+}
+.dato-icono {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #ffffff1f;
+}
+.dato span {
+  display: block;
+  font-size: 0.65rem;
+  opacity: 0.6;
+  margin-bottom: 3px;
+}
+.dato strong {
+  font-size: 0.85rem;
+}
+@media (max-width: 500px) {
+  body {
+    padding: 15px;
+  }
+  .contenedor {
+    padding: 25px 20px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  #temperatura {
+    font-size: 5.5rem;
+  }
+  .grado {
+    font-size: 2.2rem;
+  }
+  .sol {
+    width: 110px;
+    height: 110px;
+    right: -10px;
+  }
+}
