@@ -33,7 +33,7 @@ function obtenerTiempo(posicion) {
 
     nombreLugar.textContent = `${ciudad}, ${pais}`
   })
-  
+
   fetch(url)
     .then(respuesta => {
       if (!respuesta.ok) throw new Error('No se pudo obtener el tiempo');
@@ -59,7 +59,7 @@ function mostrarTiempo(datos) {
 
   descripcion.textContent = estado.nombre;
   iconoClima.textContent = estado.icono;
-  ubicacion.textContent = `Lat ${clima ? 'detectada' : ''}`;
+  ubicacion.textContent = `Latitud ${clima ? 'detectada' : ''}`;
 
   cambiarCielo(estado.tipo);
   mensaje.textContent = 'Ubicación detectada correctamente.';
