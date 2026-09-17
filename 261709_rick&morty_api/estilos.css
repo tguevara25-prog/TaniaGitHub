@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0b132b, #1c2541);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+main {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: #00ff88;
+  text-shadow: 0 0 10px #00ff88;
+  font-family: 'Bangers', cursive; 
+  letter-spacing: 3px;
+}
+
+.personaje {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00ff88;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.3);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.personaje:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
+}
+
+.personaje img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00ff88;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+}
+
+.personaje h2 {
+  color: #00ff88;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: 'Bangers', cursive; 
+  letter-spacing: 2px;
+}
+
+/* Información */
+.personaje p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* Diseño para móvil */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .personaje {
+    padding: 20px;
+  }
+
+  .personaje img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .personaje h2 {
+    font-size: 1.5rem;
+  }
+
+  .personaje p {
+    font-size: 1rem;
+  }
+}
