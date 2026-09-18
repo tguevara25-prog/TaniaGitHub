@@ -12,7 +12,11 @@ btnAnalizar.addEventListener('click', ()=>{
   let porcentaje = 0
   const intervalo = setInterval(()=>{
     porcentaje += 2
+    progreso.style.width = `${porcentaje}%`
   },40)
+  if(porcentaje >= 100){
+    clearInterval(intervalo)
+  }
   setTimeout(()=>{
     // resultado.textContent = 'Análisis terminado'
     const resultados = [
